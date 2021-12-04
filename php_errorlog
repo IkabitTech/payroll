@@ -1,0 +1,1 @@
+[21-Mar-2019 04:03:34 CST6CDT] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/vipajijo/public_html/payroll/application/controllers/Actions3.php on line 476

@@ -1,0 +1,27 @@
+RewriteEngine On
+#RewriteBase /
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.salaryslip.grantcarlcare.co.tz/$1 [R,L]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php?/$1
+
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+# deny from 166.62.27.64
+# deny from 104.18.59.189
+# deny from 104.28.11.26
+# deny from 88.99.135.50
+# deny from 182.160.96.130
+# deny from 68.178.213.60
+
+<IfModule Litespeed> 
+    RewriteEngine On
+    RewriteRule .* - [E=noabort:1, E=noconntimeout:1]
+</IfModule>

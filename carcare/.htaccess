@@ -1,0 +1,14 @@
+RewriteEngine On
+#RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php?/$1
+
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 166.62.27.64
+deny from 104.18.59.189
